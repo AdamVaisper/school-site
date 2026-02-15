@@ -3,50 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>School #37</title>
+<title>Школа №37 имени А.С. Пушкина</title>
 
 <style>
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
+    font-family: 'Segoe UI', sans-serif;
     background: #f4f6f9;
+    color: #1f2937;
 }
 
 header {
-    background: #1e3a8a;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/school.jpg");
+    background-size: cover;
+    background-position: center;
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 120px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1d4ed8;
 }
 
 nav {
     background: #111827;
-    padding: 10px;
     text-align: center;
+    padding: 15px;
 }
 
 nav a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
+    font-weight: 500;
 }
 
 section {
-    padding: 40px;
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .card {
     background: white;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.admin-card img {
+    width: 100%;
     border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+}
+
+th {
+    background: #2563eb;
+    color: white;
 }
 
 footer {
-    background: #1e3a8a;
+    background: #111827;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
 }
 </style>
 </head>
@@ -54,53 +133,99 @@ footer {
 <body>
 
 <header>
-<h1>School #37</h1>
-<p>Современная школа для будущих лидеров</p>
+<h1>Школа №37 имени А.С. Пушкина</h1>
+<p>Современное образование и развитие личности каждого ученика</p>
+<button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+Подробнее
+</button>
 </header>
 
 <nav>
-<a href="#">Главная</a>
-<a href="#">О школе</a>
-<a href="#">Новости</a>
-<a href="#">Контакты</a>
+<a href="#about">О школе</a>
+<a href="#admin">Администрация</a>
+<a href="#schedule">Расписание</a>
+<a href="#news">Новости</a>
+<a href="#contacts">Контакты</a>
 </nav>
 
-<section>
-<div class="card">
+<section id="about">
 <h2>О школе</h2>
-<p>Наша школа предоставляет качественное образование и развивает личность каждого ученика.</p>
+<div class="card">
+<p>Школа №37 имени А.С. Пушкина — образовательное учреждение, направленное на развитие академических знаний и личностных качеств учеников.</p>
+<p><strong>Миссия:</strong> формирование ответственных, образованных и успешных граждан будущего.</p>
+<p><strong>Основные направления:</strong> математика, иностранные языки, информатика, естественные науки.</p>
+</div>
+</section>
+
+<section id="admin">
+<h2>Администрация</h2>
+<div class="admin-grid">
+
+<div class="card admin-card">
+<img src="images/director.jpg" alt="Директор">
+<h3>И. И. Смирнов</h3>
+<p>Директор школы</p>
 </div>
 
-<div class="card">
-<h2>Миссия</h2>
-<p>Формировать образованных, ответственных и успешных учеников.</p>
+<div class="card admin-card">
+<img src="images/deputy.jpg" alt="Заместитель">
+<h3>А. А. Иванова</h3>
+<p>Заместитель директора</p>
 </div>
 
-<div class="card">
-<h2>Предметы</h2>
-<ul>
-<li>Математика</li>
-<li>Английский язык</li>
-<li>Информатика</li>
-<li>Физика</li>
-</ul>
 </div>
+</section>
 
-<div class="card">
+<section id="schedule">
+<h2>Пример расписания</h2>
+<table>
+<tr>
+<th>День</th>
+<th>1 урок</th>
+<th>2 урок</th>
+<th>3 урок</th>
+<th>4 урок</th>
+</tr>
+<tr>
+<td>Понедельник</td>
+<td>Математика</td>
+<td>Русский язык</td>
+<td>Физика</td>
+<td>История</td>
+</tr>
+<tr>
+<td>Вторник</td>
+<td>Английский</td>
+<td>Биология</td>
+<td>Информатика</td>
+<td>География</td>
+</tr>
+</table>
+</section>
+
+<section id="news">
 <h2>Новости</h2>
-<p>1. В школе прошла олимпиада по математике.</p>
-<p>2. Открыт новый компьютерный класс.</p>
+<div class="card">
+<h3>Олимпиада по математике</h3>
+<p>Ученики школы приняли участие в городской олимпиаде и показали высокие результаты.</p>
 </div>
 
 <div class="card">
+<h3>Открытие компьютерного класса</h3>
+<p>В школе открыт новый современный кабинет информатики с обновлённым оборудованием.</p>
+</div>
+</section>
+<section id="contacts">
 <h2>Контакты</h2>
-<p>Адрес: г. Нукус</p>
-<p>Email: school37@mail.com</p>
+<div class="card">
+<p><strong>Адрес:</strong> г. Ваш город, ул. Примерная, 1</p>
+<p><strong>Телефон:</strong> +998 90 000 00 00</p>
+<p><strong>Email:</strong> school37@example.com</p>
 </div>
 </section>
 
 <footer>
-<p>© 2026 School #37</p>
+<p>© 2026 Школа №37 имени А.С. Пушкина</p>
 </footer>
 
 </body>
