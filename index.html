@@ -1,3 +1,4 @@
+Aydos, [Вт 17.02.26 3:18]
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -5,117 +6,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Школа №37 имени А.С. Пушкина</title>
 <style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #f4f6f9;
-    color: #1f2937;
-}
-
-header {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/school.jpg");
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 120px 20px;
-}
-
-header h1 { font-size: 42px; margin-bottom: 15px; }
-header p { font-size: 18px; margin-bottom: 25px; }
-
-button {
-    padding: 12px 25px;
-    border: none;
-    background: #2563eb;
-    color: white;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-button:hover { background: #1d4ed8; }
-
-nav {
-    background: #111827;
-    text-align: center;
-    padding: 15px;
-}
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-section { padding: 60px 20px; max-width: 1100px; margin: auto; }
-h2 { text-align: center; margin-bottom: 40px; }
-
-.card {
-    background: white;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-.card:hover { transform: translateY(-5px); }
-
-.admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.admin-card img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-}
-th, td { padding: 12px; text-align: center; border: 1px solid #e5e7eb; }
-th { background: #2563eb; color: white; }
-
-.stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 50px;
-    text-align: center;
-}
-.stat-box {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-.stat-box:hover { transform: translateY(-5px); }
-.stat-number { font-size: 36px; font-weight: bold; color: #1d4ed8; }
-.stat-label { margin-top: 10px; font-size: 16px; }
-
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
-.news-card img { width: 100%; border-radius: 12px; margin-top: 15px; }
-.news-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.12); }
-
-footer {
-    background: #111827;
-    color: white;
-    text-align: center;
-    padding: 25px;
-}
-
-@media (max-width: 768px) { header h1 { font-size: 28px; } }
-
-/* fade-in animation */
-.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-.fade-in.show { opacity: 1; transform: translateY(0); }
-
-/* schedule buttons */
-.schedule-buttons, .class-buttons { text-align: center; margin-bottom: 20px; }
-.schedule-buttons button, .class-buttons button { margin: 5px; }
+body {margin:0; font-family: 'Segoe UI', sans-serif; background:#f4f6f9; color:#1f2937;}
+header {background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/school.jpg"); background-size: cover; background-position: center; color:white; text-align:center; padding:120px 20px;}
+header h1 {font-size:42px;margin-bottom:15px;}
+header p {font-size:18px;margin-bottom:25px;}
+button {padding:12px 25px; border:none; background:#2563eb; color:white; font-size:16px; border-radius:8px; cursor:pointer; transition:0.3s;}
+button:hover {background:#1d4ed8;}
+nav {background:#111827; text-align:center; padding:15px;}
+nav a {color:white; margin:0 15px; text-decoration:none; font-weight:500;}
+section {padding:60px 20px; max-width:1100px; margin:auto;}
+h2 {text-align:center; margin-bottom:40px;}
+.card {background:white; padding:25px; margin-bottom:25px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.08); transition:0.3s;}
+.card:hover {transform: translateY(-5px);}
+.admin-grid {display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px;}
+.admin-card img {width:100%; border-radius:10px; margin-bottom:15px;}
+table {width:100%; border-collapse:collapse; background:white; border-radius:10px; overflow:hidden;}
+th, td {padding:12px; text-align:center; border:1px solid #e5e7eb;}
+th {background:#2563eb; color:white;}
+.stats {display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:20px; margin-bottom:50px; text-align:center;}
+.stat-box {background:white; padding:30px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.08); transition:0.3s;}
+.stat-box:hover {transform:translateY(-5px);}
+.stat-number {font-size:36px; font-weight:bold; color:#1d4ed8;}
+.stat-label {margin-top:10px; font-size:16px;}
+.news-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:30px;}
+.news-card img {width:100%; border-radius:12px; margin-top:15px;}
+.news-card:hover {transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.12);}
+footer {background:#111827; color:white; text-align:center; padding:25px;}
+@media (max-width:768px){header h1{font-size:28px;}}
+.fade-in{opacity:0; transform:translateY(20px); transition:opacity 0.8s ease-out, transform 0.8s ease-out;}
+.fade-in.show{opacity:1; transform:translateY(0);}
+.schedule-buttons, .class-buttons {text-align:center; margin-bottom:20px;}
+.schedule-buttons button, .class-buttons button {margin:5px;}
 </style>
 </head>
 <body>
@@ -135,7 +56,6 @@ footer {
 <a href="#contacts">Контакты</a>
 </nav>
 
-<!-- О школе -->
 <section id="about">
 <h2>О школе</h2>
 <div class="card fade-in">
@@ -144,45 +64,37 @@ footer {
 </div>
 <div class="card fade-in">
 <h3>Миссия</h3>
-<p>Миссия школы — <strong>воспитывать целеустремлённых, ответственных и творческих личностей</strong>, готовых к вызовам XXI века, обеспечивая широкий спектр знаний и практических навыков.</p>
+<p>Миссия школы — <strong>воспитывать целеустремлённых, ответственных и творческих личностей</strong>, готовых к вызовам XXI века.</p>
 </div>
 <div class="card fade-in">
 <h3>Цели образования</h3>
 <ul>
-<li>Обеспечить глубокое и всестороннее понимание школьных дисциплин</li>
-<li>Подготовить учеников к международным экзаменам, таким как IELTS и SAT</li>
-<li>Развивать критическое мышление и исследовательские навыки</li>
-<li>Формировать лидерские качества и социальную ответственность</li>
+<li>Глубокое понимание школьных дисциплин</li>
+
+Aydos, [Вт 17.02.26 3:18]
+<li>Подготовка к международным экзаменам</li>
+<li>Развитие критического мышления</li>
+<li>Формирование лидерских качеств</li>
 </ul>
 </div>
 <div class="card fade-in">
 <h3>Методы обучения</h3>
-<p>Учебный процесс сочетает традиционные подходы с современными методиками, включая проектное обучение, практический анализ и подготовку к международным стандартам оценки знаний.</p>
+<p>Традиционные подходы + современные методики: проектное обучение, практический анализ, международные стандарты.</p>
 </div>
 <div class="card fade-in">
 <h3>Традиции и достижения</h3>
-<p>В школе ежегодно проводятся научные и творческие конкурсы, а ученики показывают высокие результаты на олимпиадах и международных экзаменах. Школа активно поддерживает инициативы учащихся и развитие студенческой активности.</p>
+<p>Научные и творческие конкурсы, высокие результаты на олимпиадах и международных экзаменах.</p>
 </div>
 </section>
 
-<!-- Администрация -->
 <section id="admin">
 <h2>Администрация</h2>
 <div class="admin-grid">
-<div class="card admin-card fade-in">
-<img src="images/director.jpg" alt="Директор">
-<h3>И. И. Смирнов</h3>
-<p>Директор школы</p>
-</div>
-<div class="card admin-card fade-in">
-<img src="images/deputy.jpg" alt="Заместитель директора">
-<h3>А. А. Иванова</h3>
-<p>Заместитель директора</p>
-</div>
+<div class="card admin-card fade-in"><img src="images/director.jpg" alt="Директор"><h3>И. И. Смирнов</h3><p>Директор школы</p></div>
+<div class="card admin-card fade-in"><img src="images/deputy.jpg" alt="Заместитель директора"><h3>А. А. Иванова</h3><p>Заместитель директора</p></div>
 </div>
 </section>
 
-<!-- Расписание -->
 <section id="schedule-section">
 <h2>Расписание</h2>
 <div class="schedule-buttons fade-in">
@@ -190,12 +102,10 @@ footer {
 <button onclick="showShift(2)">2 смена</button>
 <button onclick="showShift(3)">3 смена</button>
 </div>
-
 <div class="class-buttons fade-in" id="class-buttons" style="display:none;"></div>
 <div id="schedule-table" class="fade-in"></div>
 </section>
 
-<!-- Достижения -->
 <section id="news">
 <h2>Достижения учеников</h2>
 <div class="stats">
@@ -203,48 +113,17 @@ footer {
 <div class="stat-box fade-in"><div class="stat-number">18+</div><div class="stat-label">Высоких результатов SAT</div></div>
 <div class="stat-box fade-in"><div class="stat-number">40+</div><div class="stat-label">Milliy Sertifikat</div></div>
 </div>
-<div class="news-grid">
-<div class="card news-card fade-in">
-<h3>IELTS</h3>
-<p><strong>Лучшие результаты:</strong><br>Иванов Даниил — 8.0<br>Петрова Мария — 7.5<br>Ахмедов Азиз — 7.0</p>
-<img src="images/ielts.jpg" alt="IELTS">
-</div>
-<div class="card news-card fade-in">
-<h3>SAT</h3>
-<p><strong>Лучшие результаты:</strong><br>Смирнов Артём — 1450<br>Каримова Алина — 1420<br>Юсупов Тимур — 1380</p>
-<img src="images/sat.jpg" alt="SAT">
-</div>
-<div class="card news-card fade-in">
-<h3>Milliy Sertifikat</h3>
-<p><strong>Лучшие результаты:</strong><br>Рахимов Бекзод — 92<br>Абдуллаева Зара — 89<br>Нурматов Илхом — 87</p>
-<img src="images/milli.jpg" alt="Milliy Sertifikat">
-</div>
-</div>
 </section>
 
-<!-- Новости школы -->
 <section id="school-news">
 <h2>Новости школы</h2>
 <div class="news-grid">
-<div class="card news-card fade-in">
-<h3>Технологии в классе</h3>
-<p>Теперь каждый класс оснащён современным телевизором и интерактивной сенсорной доской. Это делает обучение более наглядным, интересным и повышает эффективность занятий, помогая каждому ученику раскрывать свой потенциал.</p>
-<img src="images/class-tech.jpg" alt="Технологии в классе">
-</div>
-<div class="card news-card fade-in">
-<h3>Международная победа</h3>
-<p>Ученица 11 Б класса, <strong>Сафина Лейла</strong>, стала победителем международной олимпиады по математике. Мы гордимся её достижением и желаем новых успехов на пути к знаниям!</p>
-<img src="images/olympiad.jpg" alt="Победа на олимпиаде">
-</div>
-<div class="card news-card fade-in">
-<h3>Спортивные соревнования</h3>
-<p>В честь Дня защиты Родины в школе прошли спортивные соревнования среди мальчиков. Соревнования развивают командный дух, силу и выносливость, а также формируют здоровые привычки и любовь к спорту.</p>
-<img src="images/sports.jpg" alt="Спортивные соревнования">
-</div>
+<div class="card news-card fade-in"><h3>Технологии в классе</h3><p>Классы оснащены современными телевизорами и интерактивной доской.</p></div>
+<div class="card news-card fade-in"><h3>Международная победа</h3><p>Ученица 11 Б класса Сафина Лейла — победитель международной олимпиады по математике.</p></div>
+<div class="card news-card fade-in"><h3>Спортивные соревнования</h3><p>День защиты Родины — спортивные соревнования среди мальчиков.</p></div>
 </div>
 </section>
 
-<!-- Контакты -->
 <section id="contacts">
 <h2>Контакты</h2>
 <div class="card fade-in">
@@ -259,90 +138,79 @@ footer {
 </footer>
 
 <script>
-// fade-in animation
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold: 0.2 };
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-entries.forEach(entry => {
-if(!entry.isIntersecting) return;
-entry.target.classList.add('show');
-appearOnScroll.unobserve(entry.target);
-});
-}, appearOptions);
-faders.forEach(fader => appearOnScroll.observe(fader));
+const faders=document.querySelectorAll('.fade-in');
+const observer=new IntersectionObserver((entries, obs)=>{
+entries.forEach(entry=>{if(!entry.isIntersecting) return; entry.target.classList.add('show'); obs.unobserve(entry.target);});
+},{threshold:0.2});
+faders.forEach(f=>observer.observe(f));
 
-// Расписание
-const subjects = {
-1: ["Математика","Русский язык","Узбекский язык","Литература","Природоведение","Физкультура"],
-2: ["Математика","Русский язык","Узбекский язык","Литература","Природоведение","Физкультура"],
-3: ["Математика","Русский язык","Узбекский язык","Литература","Природоведение","Физкультура"],
-4: ["Математика","Русский язык","Узбекский язык","Литература","Природоведение","Физкультура"],
-5: ["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Английский"],
-6: ["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Английский"],
-7: ["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Иностранный язык"],
-8: ["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Иностранный язык"],
-9: ["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Иностранный язык"],
+const subjects={
+1:["Математика","Русский","Узбекский","Литература","Природоведение","Физкультура"],
+2:["Математика","Русский","Узбекский","Литература","Природоведение","Физкультура"],
+3:["Математика","Русский","Узбекский","Литература","Природоведение","Физкультура"],
+4:["Математика","Русский","Узбекский","Литература","Природоведение","Физкультура"],
+5:["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Английский"],
+6:["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Английский"],
+7:["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Иностранный язык"],
+8:["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Иностранный язык"],
+9:["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Иностранный язык"],
 10:["Математика","Алгебра","Физика","Химия","Биология","История","Обществознание","Информатика","Английский"],
+
+Aydos, [Вт 17.02.26 3:18]
 11:["Математика","Алгебра","Физика","Химия","Биология","История","Обществознание","Информатика","Английский"]
 };
-const weekDays = ["Понедельник","Вторник","Среда","Четверг","Пятница","Суббота"];
-const shiftTimes = {1:"08:15",2:"13:15",3:"14:05"};
-
-function timeAfter(start, lessons){
-let [h,m]=start.split(":").map(Number);
-let times=[];
-lessons.forEach(()=>{times.push(${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}); m+=50; h+=Math.floor(m/60); m%=60;});
-return times;
-}
-
+const weekDays=["Понедельник","Вторник","Среда","Четверг","Пятница","Суббота"];
+const shiftTimes={1:"08:15",2:"13:15",3:"14:05"};
 let currentShift=1;
 
 function showShift(shift){
 currentShift=shift;
-const classDiv=document.getElementById("class-buttons");
-classDiv.innerHTML="";
-classDiv.style.display="block";
+const div=document.getElementById("class-buttons");
+div.style.display="block";
+div.innerHTML="";
 for(let i=1;i<=11;i++){
 let btn=document.createElement("button");
 btn.innerText=i+" класс";
 btn.onclick=()=>showSchedule(i);
-classDiv.appendChild(btn);
+div.appendChild(btn);
 }
 document.getElementById("schedule-table").innerHTML="";
 }
+
+function addTime(startH,startM,min){startM+=min; startH+=Math.floor(startM/60); startM=startM%60; return [startH,startM];}
+function formatTime(h,m){return String(h).padStart(2,'0')+":"+String(m).padStart(2,'0');}
 
 function showSchedule(klass){
 const tableDiv=document.getElementById("schedule-table");
 tableDiv.innerHTML="";
 const table=document.createElement("table");
 const thead=document.createElement("thead");
-let trHead=document.createElement("tr");
-["День","Урок","Время"].forEach(h=>{
-let th=document.createElement("th"); th.innerText=h; trHead.appendChild(th);});
-thead.appendChild(trHead); table.appendChild(thead);
-
+let trh=document.createElement("tr");
+["День","Урок","Время"].forEach(text=>{let th=document.createElement("th"); th.innerText=text; trh.appendChild(th);});
+thead.appendChild(trh); table.appendChild(thead);
 const tbody=document.createElement("tbody");
 weekDays.forEach(day=>{
 let lessonsCount=5+Math.floor(Math.random()*2);
 let lessonSubjects=subjects[klass].slice(0,lessonsCount);
-let times=timeAfter(shiftTimes[currentShift], lessonSubjects);
+let times=[];
+let [h,m]=shiftTimes[currentShift].split(":").map(Number);
+for(let i=0;i<lessonsCount;i++){
+let start=formatTime(h,m);
+[h,m]=addTime(h,m,45); // урок 45 мин
+let end=formatTime(h,m);
+[h,m]=addTime(h,m,5); // перемена
+times.push(start+"-"+end);
+}
 lessonSubjects.forEach((sub,i)=>{
-    let tr=document.createElement("tr");
-if(i==0){ let tdDay=document.createElement("td"); tdDay.innerText=day; tdDay.rowSpan=lessonSubjects.length; tr.appendChild(tdDay);}
-let tdSub=document.createElement("td"); tdSub.innerText=sub; tr.appendChild(tdSub);
-let tdTime=document.createElement("td"); tdTime.innerText=times[i]+"-"+addLessonTime(times[i]); tr.appendChild(tdTime);
+let tr=document.createElement("tr");
+if(i===0){let tdDay=document.createElement("td"); tdDay.innerText=day; tdDay.rowSpan=lessonSubjects.length; tr.appendChild(tdDay);}
+let tdLesson=document.createElement("td"); tdLesson.innerText=sub; tr.appendChild(tdLesson);
+let tdTime=document.createElement("td"); tdTime.innerText=times[i]; tr.appendChild(tdTime);
 tbody.appendChild(tr);
 });
 });
 table.appendChild(tbody);
 tableDiv.appendChild(table);
-}
-
-// helper: добавляем 45 мин к времени начала
-function addLessonTime(start){
-let [h,m]=start.split(":").map(Number);
-m+=45; h+=Math.floor(m/60); m%=60;
-return ${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")};
 }
 </script>
 </body>
