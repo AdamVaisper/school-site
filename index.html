@@ -158,6 +158,11 @@ th {
     margin-top: 15px;
 }
 
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
 footer {
     background: #111827;
     color: white;
@@ -169,6 +174,18 @@ footer {
     header h1 {
         font-size: 28px;
     }
+}
+
+/* Анимация появления элементов */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 </style>
 </head>
@@ -188,22 +205,23 @@ footer {
 <a href="#admin">Администрация</a>
 <a href="#schedule">Расписание</a>
 <a href="#news">Достижения</a>
+<a href="#school-news">Новости</a>
 <a href="#contacts">Контакты</a>
 </nav>
 
+<!-- О школе -->
 <section id="about">
 <h2>О школе</h2>
-<div class="card">
+<div class="card fade-in">
   <h3>История и наследие</h3>
   <p>Школа №37 имени Александра Сергеевича Пушкина — одно из старейших общеобразовательных учреждений города Нукуса. С момента основания школа стала центром качественного образования и воспитания молодого поколения. В её стенах формируются не только академические знания, но и жизненные принципы, уважение к культуре и стремление к успеху.</p>
 </div>
-
-<div class="card">
+    <div class="card fade-in">
   <h3>Миссия</h3>
   <p>Миссия школы — <strong>воспитывать целеустремлённых, ответственных и творческих личностей</strong>, готовых к вызовам XXI века, обеспечивая широкий спектр знаний и практических навыков.</p>
 </div>
 
-<div class="card">
+<div class="card fade-in">
   <h3>Цели образования</h3>
   <ul>
     <li>Обеспечить глубокое и всестороннее понимание школьных дисциплин</li>
@@ -213,38 +231,39 @@ footer {
   </ul>
 </div>
 
-<div class="card">
+<div class="card fade-in">
   <h3>Методы обучения</h3>
   <p>Учебный процесс сочетает традиционные подходы с современными методиками, включая проектное обучение, практический анализ и подготовку к международным стандартам оценки знаний.</p>
 </div>
 
-<div class="card">
+<div class="card fade-in">
   <h3>Традиции и достижения</h3>
   <p>В школе ежегодно проводятся научные и творческие конкурсы, а ученики показывают высокие результаты на олимпиадах и международных экзаменах. Школа активно поддерживает инициативы учащихся и развитие студенческой активности.</p>
 </div>
 </section>
 
+<!-- Администрация -->
 <section id="admin">
 <h2>Администрация</h2>
 <div class="admin-grid">
-
-<div class="card admin-card">
+<div class="card admin-card fade-in">
 <img src="images/director.jpg" alt="Директор">
 <h3>И. И. Смирнов</h3>
 <p>Директор школы</p>
 </div>
 
-<div class="card admin-card">
+<div class="card admin-card fade-in">
 <img src="images/deputy.jpg" alt="Заместитель директора">
 <h3>А. А. Иванова</h3>
 <p>Заместитель директора</p>
 </div>
-
 </div>
 </section>
-    <section id="schedule">
+
+<!-- Расписание -->
+<section id="schedule">
 <h2>Пример расписания</h2>
-<table>
+<table class="fade-in">
 <tr>
 <th>День</th>
 <th>1 урок</th>
@@ -269,27 +288,27 @@ footer {
 </table>
 </section>
 
+<!-- Достижения -->
 <section id="news">
 <h2>Достижения учеников</h2>
 
 <div class="stats">
-<div class="stat-box">
+<div class="stat-box fade-in">
 <div class="stat-number">25+</div>
 <div class="stat-label">Сертификатов IELTS</div>
 </div>
-<div class="stat-box">
+<div class="stat-box fade-in">
 <div class="stat-number">18+</div>
 <div class="stat-label">Высоких результатов SAT</div>
 </div>
-<div class="stat-box">
+<div class="stat-box fade-in">
 <div class="stat-number">40+</div>
 <div class="stat-label">Milliy Sertifikat</div>
 </div>
 </div>
 
 <div class="news-grid">
-
-<div class="card news-card">
+<div class="card news-card fade-in">
 <h3>IELTS</h3>
 <p><strong>Лучшие результаты:</strong><br>
 Иванов Даниил — 8.0<br>
@@ -299,7 +318,7 @@ footer {
 <img src="images/ielts.jpg" alt="IELTS">
 </div>
 
-<div class="card news-card">
+<div class="card news-card fade-in">
 <h3>SAT</h3>
 <p><strong>Лучшие результаты:</strong><br>
 Смирнов Артём — 1450<br>
@@ -309,7 +328,7 @@ footer {
 <img src="images/sat.jpg" alt="SAT">
 </div>
 
-<div class="card news-card">
+<div class="card news-card fade-in">
 <h3>Milliy Sertifikat</h3>
 <p><strong>Лучшие результаты:</strong><br>
 Рахимов Бекзод — 92<br>
@@ -318,13 +337,39 @@ footer {
 </p>
 <img src="images/milli.jpg" alt="Milliy Sertifikat">
 </div>
+</div>
+</section>
+
+<!-- Новости школы -->
+<section id="school-news">
+<h2>Новости школы</h2>
+
+<div class="news-grid">
+
+<div class="card news-card fade-in">
+<h3>Технологии в классе</h3>
+<p>Теперь каждый класс оснащён современным телевизором и интерактивной сенсорной доской. Это делает обучение более наглядным, интересным и повышает эффективность занятий, помогая каждому ученику раскрывать свой потенциал.</p>
+<img src="images/class-tech.jpg" alt="Технологии в классе">
+</div>
+
+<div class="card news-card fade-in">
+<h3>Международная победа</h3>
+<p>Ученица 11 Б класса, <strong>Сафина Лейла</strong>, стала победителем международной олимпиады по математике. Мы гордимся её достижением и желаем новых успехов на пути к знаниям!</p>
+<img src="images/olympiad.jpg" alt="Победа на олимпиаде">
+</div>
+    <div class="card news-card fade-in">
+<h3>Спортивные соревнования</h3>
+<p>В честь Дня защиты Родины в школе прошли спортивные соревнования среди мальчиков. Соревнования развивают командный дух, силу и выносливость, а также формируют здоровые привычки и любовь к спорту.</p>
+<img src="images/sports.jpg" alt="Спортивные соревнования">
+</div>
 
 </div>
 </section>
 
+<!-- Контакты -->
 <section id="contacts">
 <h2>Контакты</h2>
-<div class="card">
+<div class="card fade-in">
 <p><strong>Адрес:</strong> г. Нукус, ул. Т.Кайыпбергенова, 1</p>
 <p><strong>Телефон:</strong> +998 94 654 87 93</p>
 <p><strong>Email:</strong> school37@gmail.com</p>
@@ -335,8 +380,26 @@ footer {
 <p>© 2026 Школа №37 имени А.С. Пушкина</p>
 </footer>
 
+<!-- JS для анимации при скролле -->
+<script>
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+    threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        appearOnScroll.unobserve(entry.target);
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+</script>
+
 </body>
 </html>
-
-
-
