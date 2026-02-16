@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Школа №37 имени А.С. Пушкина</title>
-
 <style>
 body {
     margin: 0;
@@ -187,9 +186,18 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Кнопки смен и классов для расписания */
+.schedule-buttons, .class-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.schedule-buttons button, .class-buttons button {
+    margin: 5px;
+}
 </style>
 </head>
-
 <body>
 
 <header>
@@ -203,22 +211,23 @@ footer {
 <nav>
 <a href="#about">О школе</a>
 <a href="#admin">Администрация</a>
-<a href="#schedule">Расписание</a>
+<a href="#schedule-section">Расписание</a>
 <a href="#news">Достижения</a>
 <a href="#school-news">Новости</a>
 <a href="#contacts">Контакты</a>
-</nav><!-- О школе -->
+</nav>
+
+<!-- О школе -->
 <section id="about">
-<h2>О школе</h2>
+    <h2>О школе</h2>
 <div class="card fade-in">
   <h3>История и наследие</h3>
   <p>Школа №37 имени Александра Сергеевича Пушкина — одно из старейших общеобразовательных учреждений города Нукуса. С момента основания школа стала центром качественного образования и воспитания молодого поколения. В её стенах формируются не только академические знания, но и жизненные принципы, уважение к культуре и стремление к успеху.</p>
 </div>
-    <div class="card fade-in">
+<div class="card fade-in">
   <h3>Миссия</h3>
   <p>Миссия школы — <strong>воспитывать целеустремлённых, ответственных и творческих личностей</strong>, готовых к вызовам XXI века, обеспечивая широкий спектр знаний и практических навыков.</p>
 </div>
-
 <div class="card fade-in">
   <h3>Цели образования</h3>
   <ul>
@@ -228,12 +237,10 @@ footer {
     <li>Формировать лидерские качества и социальную ответственность</li>
   </ul>
 </div>
-
 <div class="card fade-in">
   <h3>Методы обучения</h3>
   <p>Учебный процесс сочетает традиционные подходы с современными методиками, включая проектное обучение, практический анализ и подготовку к международным стандартам оценки знаний.</p>
 </div>
-
 <div class="card fade-in">
   <h3>Традиции и достижения</h3>
   <p>В школе ежегодно проводятся научные и творческие конкурсы, а ученики показывают высокие результаты на олимпиадах и международных экзаменах. Школа активно поддерживает инициативы учащихся и развитие студенческой активности.</p>
@@ -249,7 +256,6 @@ footer {
 <h3>И. И. Смирнов</h3>
 <p>Директор школы</p>
 </div>
-
 <div class="card admin-card fade-in">
 <img src="images/deputy.jpg" alt="Заместитель директора">
 <h3>А. А. Иванова</h3>
@@ -259,37 +265,27 @@ footer {
 </section>
 
 <!-- Расписание -->
-<section id="schedule">
-<h2>Пример расписания</h2>
-<table class="fade-in">
-<tr>
-<th>День</th>
-<th>1 урок</th>
-<th>2 урок</th>
-<th>3 урок</th>
-<th>4 урок</th>
-</tr>
-<tr>
-<td>Понедельник</td>
-<td>Математика</td>
-<td>Русский язык</td>
-<td>Физика</td>
-<td>История</td>
-</tr>
-<tr>
-<td>Вторник</td>
-<td>Английский</td>
-<td>Биология</td>
-<td>Информатика</td>
-<td>География</td>
-</tr>
-</table>
+<section id="schedule-section">
+<h2>Расписание</h2>
+
+<div class="schedule-buttons fade-in">
+<button onclick="showShift(1)">1 смена</button>
+<button onclick="showShift(2)">2 смена</button>
+<button onclick="showShift(3)">3 смена</button>
+</div>
+
+<div class="class-buttons fade-in" id="class-buttons" style="display:none;">
+<!-- Кнопки классов будут добавляться здесь JS -->
+</div>
+
+<div id="schedule-table" class="fade-in">
+<!-- Таблица расписания будет генерироваться здесь JS -->
+</div>
 </section>
 
 <!-- Достижения -->
 <section id="news">
 <h2>Достижения учеников</h2>
-
 <div class="stats">
 <div class="stat-box fade-in">
 <div class="stat-number">25+</div>
@@ -304,7 +300,6 @@ footer {
 <div class="stat-label">Milliy Sertifikat</div>
 </div>
 </div>
-
 <div class="news-grid">
 <div class="card news-card fade-in">
 <h3>IELTS</h3>
@@ -315,7 +310,6 @@ footer {
 </p>
 <img src="images/ielts.jpg" alt="IELTS">
 </div>
-
 <div class="card news-card fade-in">
 <h3>SAT</h3>
 <p><strong>Лучшие результаты:</strong><br>
@@ -325,7 +319,6 @@ footer {
 </p>
 <img src="images/sat.jpg" alt="SAT">
 </div>
-
 <div class="card news-card fade-in">
 <h3>Milliy Sertifikat</h3>
 <p><strong>Лучшие результаты:</strong><br>
@@ -341,25 +334,22 @@ footer {
 <!-- Новости школы -->
 <section id="school-news">
 <h2>Новости школы</h2>
-
 <div class="news-grid">
     <div class="card news-card fade-in">
 <h3>Технологии в классе</h3>
 <p>Теперь каждый класс оснащён современным телевизором и интерактивной сенсорной доской. Это делает обучение более наглядным, интересным и повышает эффективность занятий, помогая каждому ученику раскрывать свой потенциал.</p>
 <img src="images/class-tech.jpg" alt="Технологии в классе">
 </div>
-
 <div class="card news-card fade-in">
 <h3>Международная победа</h3>
 <p>Ученица 11 Б класса, <strong>Сафина Лейла</strong>, стала победителем международной олимпиады по математике. Мы гордимся её достижением и желаем новых успехов на пути к знаниям!</p>
 <img src="images/olympiad.jpg" alt="Победа на олимпиаде">
 </div>
-    <div class="card news-card fade-in">
+<div class="card news-card fade-in">
 <h3>Спортивные соревнования</h3>
 <p>В честь Дня защиты Родины в школе прошли спортивные соревнования среди мальчиков. Соревнования развивают командный дух, силу и выносливость, а также формируют здоровые привычки и любовь к спорту.</p>
 <img src="images/sports.jpg" alt="Спортивные соревнования">
 </div>
-
 </div>
 </section>
 
@@ -377,14 +367,10 @@ footer {
 <p>© 2026 Школа №37 имени А.С. Пушкина</p>
 </footer>
 
-<!-- JS для анимации при скролле -->
 <script>
+// Анимация fade-in
 const faders = document.querySelectorAll('.fade-in');
-
-const appearOptions = {
-    threshold: 0.2
-};
-
+const appearOptions = { threshold: 0.2 };
 const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
     entries.forEach(entry => {
         if(!entry.isIntersecting) return;
@@ -392,8 +378,102 @@ const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll
         appearOnScroll.unobserve(entry.target);
     });
 }, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
 
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
+// Данные по расписанию
+const subjects = {
+    1: ["Математика","Русский язык","Узбекский язык","Литература","Природоведение","Физкультура"],
+    2: ["Математика","Русский язык","Узбекский язык","Литература","Природоведение","Физкультура"],
+    3: ["Математика","Русский язык","Узбекский язык","Литература","Природоведение","Физкультура"],
+    4: ["Математика","Русский язык","Узбекский язык","Литература","Природоведение","Физкультура"],
+    5: ["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Английский"],
+    6: ["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Английский"],
+    7: ["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Иностранный язык"],
+    8: ["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Иностранный язык"],
+    9: ["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Иностранный язык"],
+    10:["Математика","Алгебра","Физика","Химия","Биология","История","Обществознание","Информатика","Английский"],
+    11:["Математика","Алгебра","Физика","Химия","Биология","История","Обществознание","Информатика","Английский"]
+};
+const weekDays = ["Понедельник","Вторник","Среда","Четверг","Пятница","Суббота"];
+const shiftTimes = {1:"08:15",2:"13:15",3:"14:05"};
+
+function timeAfter(start, lessons){
+    let [h,m] = start.split(":").map(Number);
+    let times = [];
+    lessons.forEach((l,i)=>{
+        let sh = String(h).padStart(2,"0");
+        let sm = String(m).padStart(2,"0");
+        times.push(${sh}:${sm});
+        m += 50;
+        h += Math.floor(m/60);
+        m = m%60;
+    });
+    return times;
+}
+
+let currentShift = 1;
+
+function showShift(shift){
+    currentShift = shift;
+    const classDiv = document.getElementById("class-buttons");
+    classDiv.innerHTML = "";
+    classDiv.style.display = "block";
+    for(let i=1;i<=11;i++){
+        let btn = document.createElement("button");
+        btn.innerText = i+" класс";
+        btn.onclick = ()=>showSchedule(i);
+        classDiv.appendChild(btn);
+    }
+    document.getElementById("schedule-table").innerHTML = "";
+}
+    function showSchedule(klass){
+    const tableDiv = document.getElementById("schedule-table");
+    tableDiv.innerHTML = "";
+    const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    let thRow = document.createElement("tr");
+    ["День","Урок","Время"].forEach(txt=>{
+        let th = document.createElement("th");
+        th.innerText = txt;
+        thRow.appendChild(th);
+    });
+    thead.appendChild(thRow);
+    table.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+    weekDays.forEach(day=>{
+        let lessonsCount = 5 + Math.floor(Math.random()*2); // 5 или 6 уроков
+        let lessonSubjects = subjects[klass].slice(0,lessonsCount);
+        let times = timeAfter(shiftTimes[currentShift], lessonSubjects);
+
+        lessonSubjects.forEach((sub,i)=>{
+            let tr = document.createElement("tr");
+            if(i==0){
+                let tdDay = document.createElement("td");
+                tdDay.innerText = day;
+                tdDay.rowSpan = lessonSubjects.length;
+                tr.appendChild(tdDay);
+            }
+
+            let tdSub = document.createElement("td");
+            tdSub.innerText = sub;
+            tr.appendChild(tdSub);
+
+            let tdTime = document.createElement("td");
+            let [h,m] = times[i].split(":").map(Number);
+            let endM = m + 45;
+            let endH = h + Math.floor(endM/60);
+            endM = endM%60;
+            tdTime.innerText = times[i] + " - " + String(endH).padStart(2,"0") + ":" + String(endM).padStart(2,"0");
+            tr.appendChild(tdTime);
+
+            tbody.appendChild(tr);
+        });
+    });
+
+    table.appendChild(tbody);
+    tableDiv.appendChild(table);
+}
 </script>
+</body>
+</html>
