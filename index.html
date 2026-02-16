@@ -101,6 +101,7 @@ table {
     background: white;
     border-radius: 10px;
     overflow: hidden;
+    margin-top: 20px;
 }
 
 th, td {
@@ -199,13 +200,10 @@ footer {
 </style>
 </head>
 <body>
-
 <header>
 <h1>Школа №37 имени А.С. Пушкина</h1>
 <p>Современное образование и развитие личности каждого ученика</p>
-<button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-Подробнее
-</button>
+<button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Подробнее</button>
 </header>
 
 <nav>
@@ -218,8 +216,8 @@ footer {
 </nav>
 
 <!-- О школе -->
-<section id="about">
-    <h2>О школе</h2>
+    <section id="about">
+<h2>О школе</h2>
 <div class="card fade-in">
   <h3>История и наследие</h3>
   <p>Школа №37 имени Александра Сергеевича Пушкина — одно из старейших общеобразовательных учреждений города Нукуса. С момента основания школа стала центром качественного образования и воспитания молодого поколения. В её стенах формируются не только академические знания, но и жизненные принципы, уважение к культуре и стремление к успеху.</p>
@@ -335,7 +333,7 @@ footer {
 <section id="school-news">
 <h2>Новости школы</h2>
 <div class="news-grid">
-    <div class="card news-card fade-in">
+<div class="card news-card fade-in">
 <h3>Технологии в классе</h3>
 <p>Теперь каждый класс оснащён современным телевизором и интерактивной сенсорной доской. Это делает обучение более наглядным, интересным и повышает эффективность занятий, помогая каждому ученику раскрывать свой потенциал.</p>
 <img src="images/class-tech.jpg" alt="Технологии в классе">
@@ -380,7 +378,7 @@ const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll
 }, appearOptions);
 faders.forEach(fader => appearOnScroll.observe(fader));
 
-// Данные по расписанию
+// Расписание
 const subjects = {
     1: ["Математика","Русский язык","Узбекский язык","Литература","Природоведение","Физкультура"],
     2: ["Математика","Русский язык","Узбекский язык","Литература","Природоведение","Физкультура"],
@@ -400,10 +398,16 @@ const shiftTimes = {1:"08:15",2:"13:15",3:"14:05"};
 function timeAfter(start, lessons){
     let [h,m] = start.split(":").map(Number);
     let times = [];
-    lessons.forEach((l,i)=>{
+    lessons.forEach((l)=>{
         let sh = String(h).padStart(2,"0");
         let sm = String(m).padStart(2,"0");
-        times.push(${sh}:${sm});
+        let endH = h;
+        let endM = m + 45;
+        if(endM >= 60){ endH += Math.floor(endM/60); endM = endM%60; }
+        let shEnd = String(endH).padStart(2,"0");
+        let smEnd = String(endM).padStart(2,"0");
+        times.push(${sh}:${sm} - ${shEnd}:${smEnd});
+        // перемена 5 минут
         m += 50;
         h += Math.floor(m/60);
         m = m%60;
@@ -412,8 +416,7 @@ function timeAfter(start, lessons){
 }
 
 let currentShift = 1;
-
-function showShift(shift){
+    function showShift(shift){
     currentShift = shift;
     const classDiv = document.getElementById("class-buttons");
     classDiv.innerHTML = "";
@@ -426,45 +429,42 @@ function showShift(shift){
     }
     document.getElementById("schedule-table").innerHTML = "";
 }
-    function showSchedule(klass){
+
+function showSchedule(klass){
     const tableDiv = document.getElementById("schedule-table");
     tableDiv.innerHTML = "";
     const table = document.createElement("table");
     const thead = document.createElement("thead");
-    let thRow = document.createElement("tr");
-    ["День","Урок","Время"].forEach(txt=>{
+    const thRow = document.createElement("tr");
+    ["День","Урок","Время"].forEach(text=>{
         let th = document.createElement("th");
-        th.innerText = txt;
+        th.innerText = text;
         thRow.appendChild(th);
     });
     thead.appendChild(thRow);
     table.appendChild(thead);
 
     const tbody = document.createElement("tbody");
+
     weekDays.forEach(day=>{
-        let lessonsCount = 5 + Math.floor(Math.random()*2); // 5 или 6 уроков
-        let lessonSubjects = subjects[klass].slice(0,lessonsCount);
-        let times = timeAfter(shiftTimes[currentShift], lessonSubjects);
+        const lessonsCount = 5 + Math.floor(Math.random()*2); // 5 или 6 уроков
+        const lessonSubjects = subjects[klass].slice(0,lessonsCount);
+        const times = timeAfter(shiftTimes[currentShift], lessonSubjects);
 
         lessonSubjects.forEach((sub,i)=>{
-            let tr = document.createElement("tr");
+            const tr = document.createElement("tr");
             if(i==0){
-                let tdDay = document.createElement("td");
+                const tdDay = document.createElement("td");
                 tdDay.innerText = day;
                 tdDay.rowSpan = lessonSubjects.length;
                 tr.appendChild(tdDay);
             }
-
-            let tdSub = document.createElement("td");
+            const tdSub = document.createElement("td");
             tdSub.innerText = sub;
             tr.appendChild(tdSub);
 
-            let tdTime = document.createElement("td");
-            let [h,m] = times[i].split(":").map(Number);
-            let endM = m + 45;
-            let endH = h + Math.floor(endM/60);
-            endM = endM%60;
-            tdTime.innerText = times[i] + " - " + String(endH).padStart(2,"0") + ":" + String(endM).padStart(2,"0");
+            const tdTime = document.createElement("td");
+            tdTime.innerText = times[i];
             tr.appendChild(tdTime);
 
             tbody.appendChild(tr);
