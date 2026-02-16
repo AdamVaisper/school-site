@@ -87,7 +87,6 @@ table {
     background: white;
     border-radius: 10px;
     overflow: hidden;
-    margin-top: 20px;
 }
 th, td {
     padding: 12px;
@@ -352,23 +351,10 @@ const subjects = {
 const weekDays = ["Понедельник","Вторник","Среда","Четверг","Пятница","Суббота"];
 const shiftTimes = {1:"08:15",2:"13:15",3:"14:05"};
 function timeAfter(start, lessons){
-    let [h,m] = start.split(":").map(Number);
-    let times = [];
-    lessons.forEach((l)=>{
-        let sh = String(h).padStart(2,"0");
-        let sm = String(m).padStart(2,"0");
-        let endH = h;
-        let endM = m + 45;
-        if(endM >= 60){ endH += Math.floor(endM/60); endM = endM%60; }
-        let shEnd = String(endH).padStart(2,"0");
-        let smEnd = String(endM).padStart(2,"0");
-        times.push(${sh}:${sm} - ${shEnd}:${smEnd});
-        // перемена 5 минут
-        m += 50;
-        h += Math.floor(m/60);
-        m = m%60;
-    });
-    return times;
+let [h,m]=start.split(":").map(Number);
+let times=[];
+lessons.forEach(()=>{times.push(${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}); m+=50; h+=Math.floor(m/60); m%=60;});
+return times;
 }
 let currentShift = 1;
     function showShift(shift){
@@ -389,38 +375,31 @@ function showSchedule(klass){
     tableDiv.innerHTML = "";
     const table = document.createElement("table");
     const thead = document.createElement("thead");
-    const thRow = document.createElement("tr");
-    ["День","Урок","Время"].forEach(text=>{
-        let th = document.createElement("th");
-        th.innerText = text;
-        thRow.appendChild(th);
-    });
-    thead.appendChild(thRow);
-    table.appendChild(thead);
-    const tbody = document.createElement("tbody");
-    weekDays.forEach(day=>{
-        const lessonsCount = 5 + Math.floor(Math.random()*2); // 5 или 6 уроков
-        const lessonSubjects = subjects[klass].slice(0,lessonsCount);
-        const times = timeAfter(shiftTimes[currentShift], lessonSubjects);
-        lessonSubjects.forEach((sub,i)=>{
-            const tr = document.createElement("tr");
-            if(i==0){
-                const tdDay = document.createElement("td");
-                tdDay.innerText = day;
-                tdDay.rowSpan = lessonSubjects.length;
-                tr.appendChild(tdDay);
-            }
-            const tdSub = document.createElement("td");
-            tdSub.innerText = sub;
-            tr.appendChild(tdSub);
-            const tdTime = document.createElement("td");
-            tdTime.innerText = times[i];
-            tr.appendChild(tdTime);
-            tbody.appendChild(tr);
-        });
-    });
-    table.appendChild(tbody);
-    tableDiv.appendChild(table);
+    let trHead = document.createElement("tr");
+    ["День","Урок","Время"].forEach(h=>{
+let th=document.createElement("th"); th.innerText=h; trHead.appendChild(th);});
+thead.appendChild(trHead); table.appendChild(thead);
+const tbody=document.createElement("tbody");
+weekDays.forEach(day=>{
+let lessonsCount=5+Math.floor(Math.random()*2);
+let lessonSubjects=subjects[klass].slice(0,lessonsCount);
+let times=timeAfter(shiftTimes[currentShift], lessonSubjects);
+lessonSubjects.forEach((sub,i)=>{
+let tr=document.createElement("tr");
+if(i==0){ let tdDay=document.createElement("td"); tdDay.innerText=day; tdDay.rowSpan=lessonSubjects.length; tr.appendChild(tdDay);}
+let tdSub=document.createElement("td"); tdSub.innerText=sub; tr.appendChild(tdSub);
+let tdTime=document.createElement("td"); tdTime.innerText=times[i]+"-"+addLessonTime(times[i]); tr.appendChild(tdTime);
+tbody.appendChild(tr);
+});
+});
+table.appendChild(tbody);
+tableDiv.appendChild(table);
+}
+// helper: добавляем 45 мин к времени начала
+function addLessonTime(start){
+let [h,m]=start.split(":").map(Number);
+m+=45; h+=Math.floor(m/60); m%=60;
+return ${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")};
 }
 </script>
 </body>
