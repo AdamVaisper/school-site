@@ -5,130 +5,307 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Школа №37 имени А.С. Пушкина</title>
 <style>
-body {margin:0; font-family: 'Segoe UI', sans-serif; background:#f4f6f9; color:#1f2937;}
-header {background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/school.jpg"); background-size: cover; background-position: center; color:white; text-align:center; padding:120px 20px;}
-header h1 {font-size:42px;margin-bottom:15px;}
-header p {font-size:18px;margin-bottom:25px;}
-button {padding:12px 25px; border:none; background:#2563eb; color:white; font-size:16px; border-radius:8px; cursor:pointer; transition:0.3s;}
-button:hover {background:#1d4ed8;}
-nav {background:#111827; text-align:center; padding:15px;}
-nav a {color:white; margin:0 15px; text-decoration:none; font-weight:500;}
-section {padding:60px 20px; max-width:1100px; margin:auto;}
-h2 {text-align:center; margin-bottom:40px;}
-.card {background:white; padding:25px; margin-bottom:25px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.08); transition:0.3s;}
-.card:hover {transform: translateY(-5px);}
-.admin-grid {display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px;}
-.admin-card img {width:100%; border-radius:10px; margin-bottom:15px;}
-table {width:100%; border-collapse:collapse; background:white; border-radius:10px; overflow:hidden;}
-th, td {padding:12px; text-align:center; border:1px solid #e5e7eb;}
-th {background:#2563eb; color:white;}
-.stats {display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:20px; margin-bottom:50px; text-align:center;}
-.stat-box {background:white; padding:30px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.08); transition:0.3s;}
-.stat-box:hover {transform:translateY(-5px);}
-.stat-number {font-size:36px; font-weight:bold; color:#1d4ed8;}
-.stat-label {margin-top:10px; font-size:16px;}
-.news-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:30px;}
-.news-card img {width:100%; border-radius:12px; margin-top:15px;}
-.news-card:hover {transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.12);}
-footer {background:#111827; color:white; text-align:center; padding:25px;}
-@media (max-width:768px){header h1{font-size:28px;}}
-.fade-in{opacity:0; transform:translateY(20px); transition:opacity 0.8s ease-out, transform 0.8s ease-out;}
-.fade-in.show{opacity:1; transform:translateY(0);}
-.schedule-buttons, .class-buttons {text-align:center; margin-bottom:20px;}
-.schedule-buttons button, .class-buttons button {margin:5px;}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f9;
+    color: #1f2937;
+}
+header {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/school.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+header h1 { font-size: 42px; margin-bottom: 15px; }
+header p { font-size: 18px; margin-bottom: 25px; }
+nav { background: #111827; text-align: center; padding: 15px; }
+nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: 500; }
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+    background: linear-gradient(180deg, #f9fafb 0%, #f4f6f9 100%);
+    border-radius: 12px;
+}
+h2 { text-align: center; margin-bottom: 40px; }
+.card {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px; /* или увеличить до 15px */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.card:hover { transform: translateY(-5px); }
+.admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.admin-card img, .news-card img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
+th, td { padding: 12px; text-align: center; border: 1px solid #e5e7eb; }
+th { background: #2563eb; color: white; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 50px; text-align: center; }
+.stat-box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); transition: 0.3s; }
+.stat-box:hover { transform: translateY(-5px); }
+.stat-number { font-size: 36px; font-weight: bold; color: #1d4ed8; }
+.stat-label { margin-top: 10px; font-size: 16px; }
+.news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.news-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.12); }
+footer { background: #111827; color: white; text-align: center; padding: 25px; }
+@media (max-width: 768px) { header h1 { font-size: 28px; } }
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in.show { opacity: 1; transform: translateY(0); }
+.schedule-table { max-width: 900px; margin: auto; border-collapse: collapse; }
+.schedule-table th, .schedule-table td { padding: 12px; text-align: center; border: 1px solid #e5e7eb; }
+.schedule-table th { background: #2563eb; color: white; }
+.schedule-table td { background: #ffffff; }
+.schedule-table tr:hover td { background: #f0f4ff; }
 </style>
 </head>
 <body>
-
 <header>
 <h1>Школа №37 имени А.С. Пушкина</h1>
 <p>Современное образование и развитие личности каждого ученика</p>
-<button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Подробнее</button>
 </header>
-
 <nav>
 <a href="#about">О школе</a>
 <a href="#admin">Администрация</a>
 <a href="#schedule-section">Расписание</a>
+<a href="#subjects">Направления</a>
 <a href="#news">Достижения</a>
 <a href="#school-news">Новости</a>
+<a href="#graduates">Выпускники</a>
 <a href="#contacts">Контакты</a>
 </nav>
-
+<!-- О школе -->
 <section id="about">
 <h2>О школе</h2>
 <div class="card fade-in">
 <h3>История и наследие</h3>
-<p>Школа №37 имени Александра Сергеевича Пушкина — одно из старейших общеобразовательных учреждений города Нукуса. С момента основания школа стала центром качественного образования и воспитания молодого поколения. В её стенах формируются не только академические знания, но и жизненные принципы, уважение к культуре и стремление к успеху.</p>
+<p>Школа №37 имени Александра Сергеевича Пушкина — одно из старейших образовательных учреждений города Нукуса. В стенах школы формируются академические знания, жизненные принципы, уважение к культуре и стремление к успеху.</p>
 </div>
 <div class="card fade-in">
 <h3>Миссия</h3>
-<p>Миссия школы — <strong>воспитывать целеустремлённых, ответственных и творческих личностей</strong>, готовых к вызовам XXI века.</p>
+<p>Миссия школы — <strong>воспитывать целеустремлённых, ответственных и творческих личностей</strong>, готовых к вызовам XXI века, обеспечивая широкий спектр знаний и практических навыков.</p>
 </div>
 <div class="card fade-in">
 <h3>Цели образования</h3>
 <ul>
-<li>Глубокое понимание школьных дисциплин</li>
-
-Aydos, [Вт 17.02.26 3:18]
-<li>Подготовка к международным экзаменам</li>
-<li>Развитие критического мышления</li>
-<li>Формирование лидерских качеств</li>
+<li>Обеспечить глубокое понимание школьных дисциплин</li>
+<li>Подготовить учеников к международным экзаменам</li>
+<li>Развивать критическое мышление и исследовательские навыки</li>
+<li>Формировать лидерские качества и социальную ответственность</li>
 </ul>
 </div>
 <div class="card fade-in">
 <h3>Методы обучения</h3>
-<p>Традиционные подходы + современные методики: проектное обучение, практический анализ, международные стандарты.</p>
+<p>Учебный процесс сочетает традиционные подходы с современными методиками, включая проектное обучение, практический анализ и подготовку к международным стандартам оценки знаний.</p>
 </div>
 <div class="card fade-in">
 <h3>Традиции и достижения</h3>
-<p>Научные и творческие конкурсы, высокие результаты на олимпиадах и международных экзаменах.</p>
+<p>В школе ежегодно проводятся научные и творческие конкурсы, ученики показывают высокие результаты на олимпиадах и международных экзаменах.</p>
 </div>
 </section>
 
+<!-- Администрация -->
 <section id="admin">
 <h2>Администрация</h2>
 <div class="admin-grid">
-<div class="card admin-card fade-in"><img src="images/director.jpg" alt="Директор"><h3>И. И. Смирнов</h3><p>Директор школы</p></div>
-<div class="card admin-card fade-in"><img src="images/deputy.jpg" alt="Заместитель директора"><h3>А. А. Иванова</h3><p>Заместитель директора</p></div>
+<div class="card admin-card fade-in">
+<img src="images/director.jpg" alt="Директор">
+<h3>М. М. Досназаров</h3>
+<p>Директор школы</p>
+</div>
+<div class="card admin-card fade-in">
+<img src="images/deputy.jpg" alt="Заместитель директора">
+<h3>А. А. Нуратдинова</h3>
+<p>Заместитель директора</p>
+</div>
 </div>
 </section>
 
+<!-- Расписание -->
 <section id="schedule-section">
-<h2>Расписание</h2>
-<div class="schedule-buttons fade-in">
-<button onclick="showShift(1)">1 смена</button>
-<button onclick="showShift(2)">2 смена</button>
-<button onclick="showShift(3)">3 смена</button>
+<h2>Расписание 10 класса</h2>
+<table class="schedule-table fade-in">
+<tr><th>День</th><th>1 урок</th><th>2 урок</th><th>3 урок</th><th>4 урок</th><th>5 урок</th><th>6 урок</th></tr>
+<tr><td>Понедельник</td><td>Час будущего<br>08:15-09:00</td><td>Алгебра<br>09:05-09:50</td><td>Узбекский язык<br>09:55-10:40</td><td>Химия<br>10:55-11:40</td><td>Узбекский язык<br>11:45-12:30</td><td>История Узбекистана<br>12:35-13:20</td></tr>
+<tr><td>Вторник</td><td>Алгебра<br>08:15-09:00</td><td>Геометрия<br>09:05-09:50</td><td>Физика<br>09:55-10:40</td><td>Химия<br>10:55-11:40</td><td>Биология<br>11:45-12:30</td><td>Информатика<br>12:35-13:20</td></tr>
+<tr><td>Среда</td><td>Алгебра<br>08:15-09:00</td><td>Геометрия<br>09:05-09:50</td><td>Литература<br>09:55-10:40</td><td>Английский язык<br>10:55-11:40</td><td>НВП<br>11:45-12:30</td><td>Информатика<br>12:35-13:20</td></tr>
+<tr><td>Четверг</td><td>Всемирная история<br>08:15-09:00</td><td>Алгебра<br>09:05-09:50</td><td>Физика<br>09:55-10:40</td><td>Химия<br>10:55-11:40</td><td>Госправо<br>11:45-12:30</td><td>Физкультура<br>12:35-13:20</td></tr>
+<tr><td>Пятница</td><td>Алгебра<br>08:15-09:00</td><td>Геометрия<br>09:05-09:50</td><td>Физика<br>09:55-10:40</td><td>Каракалпакский язык<br>10:55-11:40</td><td>Биология<br>11:45-12:30</td><td>История Каракалпакстана<br>12:35-13:20</td></tr>
+<tr><td>Суббота</td><td>Каракалпакский язык<br>08:15-09:00</td><td>Родной язык<br>09:05-09:50</td><td>Узбекский язык<br>09:55-10:40</td><td>Химия<br>10:55-11:40</td><td>Биология<br>11:45-12:30</td><td>-</td></tr>
+</table>
+</section>
+<!-- Учебные направления -->
+<section id="subjects">
+<h2>Учебные направления</h2>
+<div class="news-grid">
+<div class="card news-card fade-in">
+<h3>Математика</h3>
+<p>Углублённое изучение алгебры и геометрии, развитие логического и аналитического мышления.</p>
+<img src="images/teacher1.jpg" alt="Учитель математики">
+<p><strong>Бабаев Р. З.</strong></p>
+<img src="images/cert1.jpg" alt="Сертификат" style="width:60px;">
 </div>
-<div class="class-buttons fade-in" id="class-buttons" style="display:none;"></div>
-<div id="schedule-table" class="fade-in"></div>
+<div class="card news-card fade-in">
+<h3>Физика</h3>
+<p>Исследование законов природы через теорию и практические эксперименты.</p>
+<img src="images/teacher2.jpg" alt="Учитель физики">
+<p><strong>Турсынбаев П. Р.</strong></p>
+<img src="images/cert2.jpg" alt="Сертификат" style="width:60px;">
+</div>
+<div class="card news-card fade-in">
+<h3>Химия</h3>
+<p>Изучение химических процессов и подготовка к олимпиадам и экзаменам.</p>
+<img src="images/teacher3.jpg" alt="Учитель химии">
+<p><strong>Сапарова Г. Х.</strong></p>
+<img src="images/cert3.jpg" alt="Сертификат" style="width:60px;">
+</div>
+
+<div class="card news-card fade-in">
+<h3>Биология</h3>
+<p>Понимание строения живых организмов и экологических систем.</p>
+<img src="images/teacher4.jpg" alt="Учитель биологии">
+<p><strong>Худайбергенова Н. Д.</strong></p>
+<img src="images/cert4.jpg" alt="Сертификат" style="width:60px;">
+</div>
+
+<div class="card news-card fade-in">
+<h3>Английский язык</h3>
+<p>Подготовка к международным экзаменам IELTS и развитие свободного общения.</p>
+<img src="images/teacher5.jpg" alt="Учитель английского">
+<p><strong>Каримова Л.А.</strong></p>
+<img src="images/cert5.jpg" alt="Сертификат" style="width:60px;">
+</div>
+</div>
 </section>
 
+<!-- Достижения -->
 <section id="news">
 <h2>Достижения учеников</h2>
+
+<!-- Анимация цифр -->
 <div class="stats">
-<div class="stat-box fade-in"><div class="stat-number">25+</div><div class="stat-label">Сертификатов IELTS</div></div>
-<div class="stat-box fade-in"><div class="stat-number">18+</div><div class="stat-label">Высоких результатов SAT</div></div>
-<div class="stat-box fade-in"><div class="stat-number">40+</div><div class="stat-label">Milliy Sertifikat</div></div>
+  <div class="stat-box fade-in">
+    <div class="stat-number" data-target="25">0</div>
+    <div class="stat-label">Сертификатов IELTS</div>
+  </div>
+  <div class="stat-box fade-in">
+    <div class="stat-number" data-target="18">0</div>
+    <div class="stat-label">Высоких результатов SAT</div>
+  </div>
+  <div class="stat-box fade-in">
+    <div class="stat-number" data-target="40">0</div>
+    <div class="stat-label">Milliy Sertifikat</div>
+  </div>
+</div>
+
+<!-- Ученики с сертификатами -->
+<div class="news-grid">
+  <div class="card news-card fade-in">
+    <img src="images/student1.jpg" alt="Ученик 1">
+    <h3>Дима Пягай</h3>
+    <p>Сертификат IELTS: 8.5</p>
+    <img src="images/cert1.jpg" alt="Сертификат" style="width:60px;">
+  </div>
+  
+  <div class="card news-card fade-in">
+    <img src="images/student2.jpg" alt="Ученик 2">
+    <h3>Оразбаева Гулназ</h3>
+    <p>Milliy Sertifikat: 95/100</p>
+    <img src="images/cert2.jpg" alt="Сертификат" style="width:60px;">
+  </div>
+  
+  <div class="card news-card fade-in">
+    <img src="images/student3.jpg" alt="Ученик 3">
+    <h3>Бекзат Рахимов</h3>
+    <p>SAT: 1500+</p>
+    <img src="images/cert3.jpg" alt="Сертификат" style="width:60px;">
+  </div>
+  
+  <div class="card news-card fade-in">
+    <img src="images/student4.jpg" alt="Ученик 4">
+    <h3>Бекмуратова Зияда</h3>
+    <p>Сертификат IELTS: 9.0</p>
+    <img src="images/cert4.jpg" alt="Сертификат" style="width:60px;">
+  </div>
+  
+  <div class="card news-card fade-in">
+    <img src="images/student5.jpg" alt="Ученик 5">
+    <h3>Тимур Юсупов</h3>
+    <p>Milliy Sertifikat: 98/100</p>
+    <img src="images/cert5.jpg" alt="Сертификат" style="width:60px;">
+  </div>
 </div>
 </section>
-
+<!-- Новости школы -->
 <section id="school-news">
 <h2>Новости школы</h2>
 <div class="news-grid">
-<div class="card news-card fade-in"><h3>Технологии в классе</h3><p>Классы оснащены современными телевизорами и интерактивной доской.</p></div>
-<div class="card news-card fade-in"><h3>Международная победа</h3><p>Ученица 11 Б класса Сафина Лейла — победитель международной олимпиады по математике.</p></div>
-<div class="card news-card fade-in"><h3>Спортивные соревнования</h3><p>День защиты Родины — спортивные соревнования среди мальчиков.</p></div>
+<div class="card news-card fade-in">
+<h3>Технологии в классе</h3>
+<p>Теперь каждый класс оснащён современным телевизором и интерактивной сенсорной доской.</p>
+<img src="images/class-tech.jpg" alt="Технологии в классе">
+</div>
+<div class="card news-card fade-in">
+<h3>Международная победа</h3>
+<p>Ученица 11 Б класса, <strong>Шаназарова Дидар</strong>, стала победителем международной олимпиады по математике.</p>
+<img src="images/olympiad.jpg" alt="Победа на олимпиаде">
+</div>
+<div class="card news-card fade-in">
+<h3>Спортивные соревнования</h3>
+<p>В школе прошли спортивные соревнования среди учеников.</p>
+<img src="images/sports.jpg" alt="Спортивные соревнования">
+</div>
 </div>
 </section>
 
+<!-- Выпускники -->
+<section id="graduates">
+<h2>Выпускники</h2>
+<div class="news-grid">
+<div class="card news-card fade-in">
+<img src="images/student1.jpg" alt="Выпускник 1">
+<h3>Тимур Юсупов</h3>
+<p>Инженер в <strong>UzAuto Motors</strong><br>Выпуск 2015</p>
+</div>
+<div class="card news-card fade-in">
+<img src="images/student2.jpg" alt="Выпускник 2">
+<h3>Шаназарова Дидар</h3>
+<p>Программист в <strong>EPAM Systems</strong><br>Выпуск 2016</p>
+</div>
+<div class="card news-card fade-in">
+<img src="images/student3.jpg" alt="Выпускник 3">
+<h3>Бекзат Рахимов</h3>
+<p>Врач в <strong>Центральная клиника Нукуса</strong><br>Выпуск 2014</p>
+</div>
+<div class="card news-card fade-in">
+<img src="images/student4.jpg" alt="Выпускник 4">
+<h3>Худайбергенов Фархад</h3>
+<p>Аналитик в <strong>World Bank</strong><br>Выпуск 2017</p>
+</div>
+<div class="card news-card fade-in">
+<img src="images/student5.jpg" alt="Выпускник 5">
+<h3>Кабиханов Ерасыл</h3>
+<p>Менеджер в <strong>Beeline Uzbekistan</strong><br>Выпуск 2013</p>
+</div>
+</div>
+</section>
+
+<!-- Контакты -->
 <section id="contacts">
 <h2>Контакты</h2>
 <div class="card fade-in">
-<p><strong>Адрес:</strong> г. Нукус, ул. Т.Кайыпбергенова, 1</p>
-<p><strong>Телефон:</strong> +998 94 654 87 93</p>
-<p><strong>Email:</strong> school37@gmail.com</p>
+    <p><strong>Адрес:</strong> г. Нукус, ул. Т.Кайыпбергенова </p>
+    <p><strong>Телефон:</strong> <a href="tel:+998946548793">+998 94 654 87 93</a></p>
+    <p><strong>Email:</strong> <a href="mailto:school37@gmail.com">school37@gmail.com</a></p>
 </div>
 </section>
 
@@ -137,81 +314,48 @@ Aydos, [Вт 17.02.26 3:18]
 </footer>
 
 <script>
-const faders=document.querySelectorAll('.fade-in');
-const observer=new IntersectionObserver((entries, obs)=>{
-entries.forEach(entry=>{if(!entry.isIntersecting) return; entry.target.classList.add('show'); obs.unobserve(entry.target);});
-},{threshold:0.2});
-faders.forEach(f=>observer.observe(f));
+// Fade-in анимация
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.2 };
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+// Анимация чисел (медленная и повторяемая)
+const counters = document.querySelectorAll('.stat-number');
 
-const subjects={
-1:["Математика","Русский","Узбекский","Литература","Природоведение","Физкультура"],
-2:["Математика","Русский","Узбекский","Литература","Природоведение","Физкультура"],
-3:["Математика","Русский","Узбекский","Литература","Природоведение","Физкультура"],
-4:["Математика","Русский","Узбекский","Литература","Природоведение","Физкультура"],
-5:["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Английский"],
-6:["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Английский"],
-7:["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Иностранный язык"],
-8:["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Иностранный язык"],
-9:["Математика","Алгебра","Геометрия","Физика","Химия","Биология","История","География","Иностранный язык"],
-10:["Математика","Алгебра","Физика","Химия","Биология","История","Обществознание","Информатика","Английский"],
-
-Aydos, [Вт 17.02.26 3:18]
-11:["Математика","Алгебра","Физика","Химия","Биология","История","Обществознание","Информатика","Английский"]
-};
-const weekDays=["Понедельник","Вторник","Среда","Четверг","Пятница","Суббота"];
-const shiftTimes={1:"08:15",2:"13:15",3:"14:05"};
-let currentShift=1;
-
-function showShift(shift){
-currentShift=shift;
-const div=document.getElementById("class-buttons");
-div.style.display="block";
-div.innerHTML="";
-for(let i=1;i<=11;i++){
-let btn=document.createElement("button");
-btn.innerText=i+" класс";
-btn.onclick=()=>showSchedule(i);
-div.appendChild(btn);
-}
-document.getElementById("schedule-table").innerHTML="";
+function animateCounter(counter) {
+    const target = parseInt(counter.getAttribute("data-target"));
+    let current = 0;
+    const duration = 2000;
+    const stepTime = 20;
+    const steps = duration / stepTime;
+    const increment = target / steps;
+    counter.textContent = "0";
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            counter.textContent = target + "+";
+            clearInterval(timer);
+        } else {
+            counter.textContent = Math.floor(current);
+        }
+    }, stepTime);
 }
 
-function addTime(startH,startM,min){startM+=min; startH+=Math.floor(startM/60); startM=startM%60; return [startH,startM];}
-function formatTime(h,m){return String(h).padStart(2,'0')+":"+String(m).padStart(2,'0');}
-
-function showSchedule(klass){
-const tableDiv=document.getElementById("schedule-table");
-tableDiv.innerHTML="";
-const table=document.createElement("table");
-const thead=document.createElement("thead");
-let trh=document.createElement("tr");
-["День","Урок","Время"].forEach(text=>{let th=document.createElement("th"); th.innerText=text; trh.appendChild(th);});
-thead.appendChild(trh); table.appendChild(thead);
-const tbody=document.createElement("tbody");
-weekDays.forEach(day=>{
-let lessonsCount=5+Math.floor(Math.random()*2);
-let lessonSubjects=subjects[klass].slice(0,lessonsCount);
-let times=[];
-let [h,m]=shiftTimes[currentShift].split(":").map(Number);
-for(let i=0;i<lessonsCount;i++){
-let start=formatTime(h,m);
-[h,m]=addTime(h,m,45); // урок 45 мин
-let end=formatTime(h,m);
-[h,m]=addTime(h,m,5); // перемена
-times.push(start+"-"+end);
-}
-lessonSubjects.forEach((sub,i)=>{
-let tr=document.createElement("tr");
-if(i===0){let tdDay=document.createElement("td"); tdDay.innerText=day; tdDay.rowSpan=lessonSubjects.length; tr.appendChild(tdDay);}
-let tdLesson=document.createElement("td"); tdLesson.innerText=sub; tr.appendChild(tdLesson);
-let tdTime=document.createElement("td"); tdTime.innerText=times[i]; tr.appendChild(tdTime);
-tbody.appendChild(tr);
-});
-});
-table.appendChild(tbody);
-tableDiv.appendChild(table);
-}
+const statsSection = document.querySelector('#news');
+const statsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            counters.forEach(counter => animateCounter(counter));
+        }
+    });
+}, { threshold: 0.4 });
+statsObserver.observe(statsSection);
 </script>
 </body>
 </html>
-
